@@ -1,0 +1,110 @@
+-- TASK 1 --
+
+-- CREATE TABLE satis (
+--     mehsul_id NUMBER,
+--     sayi NUMBER,
+--     deyer NUMBER
+-- );
+-- INSERT INTO satis (mehsul_id, sayi, deyer) VALUES (1, 10, 100);
+-- INSERT INTO satis (mehsul_id, sayi, deyer) VALUES (2, 15, 200);
+-- INSERT INTO satis (mehsul_id, sayi, deyer) VALUES (3, 8, 150);
+-- INSERT INTO satis (mehsul_id, sayi, deyer) VALUES (4, 20, 50);
+-- INSERT INTO satis (mehsul_id, sayi, deyer) VALUES (5, 5, 300);
+-- SELECT 
+--     mehsul_id,
+--     sayi,
+--     deyer,
+--     (sayi * deyer) AS umumi_qazanc
+-- FROM 
+--     satis
+-- ORDER BY 
+--     umumi_qazanc DESC;
+
+---------------------------------
+
+-- TASK 2 --
+
+-- CREATE TABLE isciler (
+--     ad VARCHAR2(50),
+--     maas NUMBER,
+--     departament VARCHAR2(50)
+-- );
+-- INSERT INTO isciler (ad, maas, departament) VALUES ('Nahid', 700, 'satış');
+-- INSERT INTO isciler (ad, maas, departament) VALUES ('Rena', 650, 'satış');
+-- INSERT INTO isciler (ad, maas, departament) VALUES ('Nuray', 500, 'IT');
+-- INSERT INTO isciler (ad, maas, departament) VALUES ('Muxtar', 600, 'satış');
+-- INSERT INTO isciler (ad, maas, departament) VALUES ('Bahadur', 900, 'IT');
+-- SELECT 
+--     ad,
+--     maas,
+--     departament
+-- FROM 
+--     isciler
+-- WHERE 
+--     departament = 'satış' AND maas > 600
+-- ORDER BY 
+--     maas DESC;
+
+--------------------
+
+-- TASK3 --
+
+-- CREATE TABLE kitablar (
+--     adi VARCHAR2(100),
+--     janri VARCHAR2(50),
+--     nesr_ili NUMBER
+-- );
+-- INSERT INTO kitablar (adi, janri, nesr_ili) VALUES ('Kitab 1', 'Sevgi', 2016);
+-- INSERT INTO kitablar (adi, janri, nesr_ili) VALUES ('Kitab 2', 'Qorxu', 2018);
+-- INSERT INTO kitablar (adi, janri, nesr_ili) VALUES ('Kitab 4', 'Sevgi', 2014);
+-- SELECT 
+--     adi,
+--     janri,
+--     nesr_ili
+-- FROM 
+--     kitablar
+-- WHERE 
+--     nesr_ili > 2015
+-- ORDER BY 
+--     janri ASC;
+
+----------------------------
+
+-- TASK 4 --
+
+-- Cədvəli yaradırıq
+CREATE TABLE filmler (
+    ad VARCHAR2(100),
+    cixis_tarixi NUMBER,
+    reytinq NUMBER
+);
+
+-- Məlumatları daxil edirik
+INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 1', 1995, 8.5);
+INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 2', 1945, 6.5);
+INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 5', 2003, 6.0);
+INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 7', 2005, 7.5);
+
+-- Çıxış tarixi 2000-dən kiçik olan filmləri artan sırada sıralayırıq
+SELECT 
+    ad,
+    cixis_tarixi,
+    reytinq
+FROM 
+    filmler
+WHERE 
+    cixis_tarixi < 2000
+ORDER BY 
+    cixis_tarixi ASC;
+
+-- Reytinqi 7-dən böyük olan filmləri azalan sırada sıralayırıq
+SELECT 
+    ad,
+    cixis_tarixi,
+    reytinq
+FROM 
+    filmler
+WHERE 
+    reytinq > 7
+ORDER BY 
+    reytinq DESC;
