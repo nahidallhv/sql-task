@@ -72,20 +72,15 @@
 
 -- TASK 4 --
 
--- Cədvəli yaradırıq
 CREATE TABLE filmler (
     ad VARCHAR2(100),
     cixis_tarixi NUMBER,
     reytinq NUMBER
 );
-
--- Məlumatları daxil edirik
 INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 1', 1995, 8.5);
 INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 2', 1945, 6.5);
 INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 5', 2003, 6.0);
 INSERT INTO filmler (ad, cixis_tarixi, reytinq) VALUES ('Film 7', 2005, 7.5);
-
--- Çıxış tarixi 2000-dən kiçik olan filmləri artan sırada sıralayırıq
 SELECT 
     ad,
     cixis_tarixi,
@@ -96,8 +91,6 @@ WHERE
     cixis_tarixi < 2000
 ORDER BY 
     cixis_tarixi ASC;
-
--- Reytinqi 7-dən böyük olan filmləri azalan sırada sıralayırıq
 SELECT 
     ad,
     cixis_tarixi,
